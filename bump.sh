@@ -14,10 +14,8 @@ ls
 # rm -rf .git/
 # rsync -av --exclude='$GITHUB_REPO_NAME' ./ $GITHUB_REPO_NAME/ && find . -maxdepth 1 ! -name $GITHUB_REPO_NAME ! -path $GITHUB_REPO_NAME -exec rm -rf {} \; 
 #rsync -av --exclude='$GITHUB_REPO_NAME' ./ $GITHUB_REPO_NAME/ && find . -maxdepth 1 ! -name $GITHUB_REPO_NAME ! -path $GITHUB_REPO_NAME -exec mv {} $GITHUB_REPO_NAME/ \; && rm -rf ./*
-sudo shopt -s extglob
-mv -v !($GITHUB_REPO_NAME) $GITHUB_REPO_NAME/
-#sudo shopt -s extglob # Ativa a extensão glob
-rm -rf !($GITHUB_REPO_NAME|$GITHUB_REPO_NAME) # Apaga tudo exceto "x" e o repositório Git
+find . -maxdepth 1 ! -name $GITHUB_REPO_NAME ! -path ./$GITHUB_REPO_NAME | xargs -I{} mv {} $GITHUB_REPO_NAME/
+
 
 cd $GITHUB_REPO_NAME
 rm -rf .git/
