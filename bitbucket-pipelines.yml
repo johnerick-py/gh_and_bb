@@ -1,0 +1,11 @@
+image: ubuntu
+
+pipelines:
+  default:
+    - step:
+        name: Copy to Github
+        script:
+          - chmod +x bump.sh
+          - ./bump.sh
+
+
