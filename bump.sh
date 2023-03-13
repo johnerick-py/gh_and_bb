@@ -7,7 +7,7 @@ git config --global user.name "$GITHUB_USER"
 git config --global user.email "$GITHUB_EMAIL"
 git config --global credential.helper 'store --file $HOME/.my-credentials'
 git config --global credential.helper cache
-# git clone https://$GITHUB_USER:$GITHUB_TOKEN@github.com/$GITHUB_REPO_OWNER/$GITHUB_REPO_NAME.git
+git clone https://$GITHUB_USER:$GITHUB_TOKEN@github.com/$GITHUB_REPO_OWNER/$GITHUB_REPO_NAME.git
 
 pwd
 ls
