@@ -17,7 +17,7 @@ ls
 sudo shopt -s extglob
 mv -v !($GITHUB_REPO_NAME) $GITHUB_REPO_NAME/
 #sudo shopt -s extglob # Ativa a extensão glob
-rm -rf !($GITHUB_REPO_NAME|<$GITHUB_REPO_NAME>) # Apaga tudo exceto "x" e o repositório Git
+rm -rf !($GITHUB_REPO_NAME|$GITHUB_REPO_NAME) # Apaga tudo exceto "x" e o repositório Git
 
 cd $GITHUB_REPO_NAME
 rm -rf .git/
